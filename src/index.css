@@ -20,6 +20,7 @@ table th{
 }
 
 tbody tr:hover{
-  background-color: rgb(88,188,0) !important;
+  /*background-color: rgb(88,188,0) !important;*/
+  background-color: #d4edda !important;
 }
 

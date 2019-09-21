@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-class Form extends Component {
+export default class DrugFrom extends Component {
 
     constructor(props) {
         super(props);
@@ -237,11 +238,56 @@ class Form extends Component {
                     </tr>
                     </tbody>
                 </table>
-                <Modal show={show} onHide={this.handleClose}>
+                <Modal show={show} backdrop="static" size="lg" onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Add New Drug</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Row>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="Name" />
+                                    </div>
+                                </Form.Group>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>manufacturer</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="manufacturer" />
+                                    </div>
+                                </Form.Group>
+                            </Form.Row>
+                            <Form.Row>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>Loc #</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="Loc #" />
+                                    </div>
+                                </Form.Group>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>Stability condition</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="Stability condition" />
+                                    </div>
+                                </Form.Group>
+                            </Form.Row>
+                            <Form.Row>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>Package size</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="Package size" />
+                                    </div>
+                                </Form.Group>
+                                <Form.Group>
+                                    <div className="col">
+                                        <Form.Label>Date on stability</Form.Label>
+                                        <Form.Control size="sm" type="text" placeholder="Date on stability" />
+                                    </div>
+                                </Form.Group>
+                            </Form.Row>
+                        </Form>
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close
@@ -255,6 +301,4 @@ class Form extends Component {
             </div>
         );
     }
-}
-
-export default Form;
+};
